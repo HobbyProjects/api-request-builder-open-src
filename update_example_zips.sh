@@ -1,17 +1,5 @@
 #!/usr/bin/env bash
 
-# This script updates the framework zip files.
-#
-# Run from within the root directory of this repo
-SUB_DIR=${PWD##*/}
-if [ ${SUB_DIR} != "api-request-builder" ] && [ ${SUB_DIR} != "api-request-builder-open-src" ];
-then
-    printf 'Problem! Current subdirectory is not "api-request-builder"!\n'
-    printf 'Current subdirectory is: %s\n' "${SUB_DIR}"
-    printf 'Exiting...\n\n'
-    exit 1
-fi
-
 # Copy the document files
 cp -f src/assets/documents/anchorfields.pdf src/assets/sdkExamples/NodeJS_example
 cp -f src/assets/documents/blank.pdf        src/assets/sdkExamples/NodeJS_example

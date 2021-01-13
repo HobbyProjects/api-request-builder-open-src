@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react-bootstrap": "^1.3.0",
     "blockly": "^3.20200625.2",
     "canvas": "^2.6.1",
     "change-case": "^4.1.1",
@@ -14,6 +13,7 @@
     "pluralize": "^8.0.0",
     "prism-react-renderer": "^1.1.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
     "react-scripts": "3.4.1",
@@ -21,12 +21,14 @@
   },
   "scripts": {
     "prestart": "./update_example_zips.sh; node batch/diagramExamples.js",
-    "prebuild": "./update_example_zips.sh; node batch/diagramExamples.js",
+    "prep": "./update_example_zips.sh; node batch/diagramExamples.js",
     "startOLD": "react-scripts start",
     "start": "react-app-rewired start",
     "buildOLD": "react-scripts build",
-    "build": "react-app-rewired build",
+    "build": "npm run prep && react-app-rewired build",
+    "buildLocal": "npm run prep && react-app-rewired build",
     "test": "react-app-rewired test",
+    "test_ci": "react-app-rewired test --watchAll=false",
     "eject": "react-scripts eject",
     "diagramExamples": "./update_example_zips.sh; node batch/diagramExamples.js",
     "processSwagger": "node batch/processSwagger.js"

@@ -16,16 +16,6 @@ const env = dotenv.config().parsed
 
 
 function myOverrides(config) {
-/*
-    config.module.rules.unshift (
-          {
-            test: /\.rawraw$/i,
-            loader: 'raw-loader',
-          }
-    )
-*/
-
-
     config.module.rules.unshift (
         {
             test: /\.hbs$/i,
